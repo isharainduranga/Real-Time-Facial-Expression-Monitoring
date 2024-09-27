@@ -1,70 +1,97 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Real-Time Facial Expression Monitoring
 
-## Available Scripts
+This project is a web-based application that monitors and detects real-time facial expressions. It is built using React with Tailwind CSS for the frontend and Flask for the backend. The model used for expression detection is trained using PyTorch and a Convolutional Neural Network (CNN) architecture based on ResNet18.
 
-In the project directory, you can run:
+## Table of Contents
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Model Architecture](#model-architecture)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [Training the Model](#training-the-model)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
+- Real-time facial expression detection using webcam
+- Classifies emotions into predefined categories (e.g., Angry, Disgust, Sad, Fear)
+- User-friendly interface built with React and Tailwind CSS
+- Backend API with Flask for serving the trained model
+- Efficient performance with ResNet18 model optimized using PyTorch
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend:
+- **React**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for custom designs.
+  
+### Backend:
+- **Flask**: Python web framework for backend logic and API management.
+  
+### Machine Learning:
+- **PyTorch**: Deep learning library used for training the CNN model.
+- **ResNet18**: CNN architecture used for accurate and efficient facial expression recognition.
 
-### `npm test`
+## Model Architecture
+The facial expression detection model is built using a modified ResNet18 architecture. It is fine-tuned for recognizing four emotion categories: 
+- Angry
+- Disgust
+- Sad
+- Fear
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The model takes grayscale, 48x48 pixel images as input and uses a Convolutional Neural Network (CNN) for feature extraction and classification.
 
-### `npm run build`
+## Setup and Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites:
+- Node.js
+- Python 3.x
+- PyTorch
+- Flask
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Setup Frontend:
+1. Clone the repository:
+   \`\`\`bash
+   git clone https://github.com/your-username/real-time-facial-expression-monitoring.git
+   cd real-time-facial-expression-monitoring
+   \`\`\`
+2. Navigate to the frontend folder and install dependencies:
+   \`\`\`bash
+   npm install
+   \`\`\`
+3. Start the React app:
+\`\`\`bash
+npm start
+\`\`\`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Python Setup(Backend):
+1. Create a virtual environment and activate it:
+   \`\`\`bash
+   python -m venv venv
+   source venv/bin/activate  # For Windows: venv\Scripts\activate
+   \`\`\`
+3. Start the Flask server:
+   \`\`\`bash
+   python app.py
+   \`\`\`
 
-### `npm run eject`
+## Usage
+1. Start both the frontend and backend servers.
+2. Open the React application in your browser (usually \`http://localhost:3000\`).
+3. Allow camera permissions, and the application will start detecting your facial expressions in real-time.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Training the Model
+The model is trained using a custom dataset of facial expressions, with the following steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Preprocess the dataset by resizing images to 48x48 pixels and converting them to grayscale.
+2. Use PyTorch's ResNet18 architecture and fine-tune it to classify emotions.
+3. Train the model using the Adam optimizer and CrossEntropyLoss.
+4. Save the trained model to be used by the Flask backend for real-time inference.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you'd like to retrain the model, follow the steps in the `emotion detection.ipynb` script.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
+Feel free to fork this repository, submit issues, or make pull requests to improve the project.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
