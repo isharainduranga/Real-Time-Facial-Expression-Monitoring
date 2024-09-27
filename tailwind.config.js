@@ -1,22 +1,10 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  // configure the paths to all of your source files
   content: [
-    'node_modules/preline/dist/*.js',
-    './src/**/*.{html,js}',
+    "./src/*/.{js,jsx,ts,tsx}",
   ],
-
-  // enable dark mode via class strategy
-  darkMode: 'class',
-
   theme: {
-    extend: {
-      // extend base Tailwind CSS utility classes
-    },
+    extend: {},
   },
-
-  // add plugins to your Tailwind CSS project
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('preline/plugin')
-  ],
+  plugins: [],
 }
