@@ -11,7 +11,6 @@ This project is a web-based application that monitors and detects real-time faci
 - [Usage](#usage)
 - [Training the Model](#training-the-model)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - Real-time facial expression detection using webcam
